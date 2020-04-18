@@ -29,7 +29,6 @@
   <nav class="navbar navbar-light bg-light static-top">
     <div class="container">
       <a class="navbar-brand" href="#">Welcome to Every Hour</a>
-      <a class="btn btn-primary" href="#">Sign In</a>
     </div>
   </nav>
 
@@ -42,16 +41,9 @@
           <h1 class="mb-5">Track where your time goes. Change your mindset of how you spend it. </h1>
         </div>
         <div class="col-md-10 col-lg-8 col-xl-7 mx-auto">
-          <form id="email-form" >
-            <div class="form-row">
-              <div class="col-12 col-md-9 mb-2 mb-md-0">
-                <input type="email" class="form-control form-control-lg" placeholder="Enter your email..." id="email-field">
-              </div>
-              <div class="col-12 col-md-3">
-                <button type="submit" class="btn btn-block btn-lg btn-primary">Stay in Touch!</button>
-              </div>
-            </div>
-          </form>
+          <div class="col-12 ">
+            <button id="email-button" class="btn btn-block btn-lg btn-primary">Get in Touch!</button>
+          </div>
         </div>
       </div>
     </div>
@@ -225,7 +217,18 @@
   <script src="vendor/jquery/jquery.min.js"></script>
   <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    </script>
+  <script>
+    
+    var button = document.getElementById("email-button");
+    button.addEventListener("click", openMailClient);
+    
+    function openMailClient() {
+      console.log('ji')
+      // To confuse spambots
+      window.open( String( 'mailto:recipient^example.com' ).replace('^', '@') );   
+     }
+
+  </script>
         
 </body>
 
